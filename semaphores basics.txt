@@ -1,0 +1,47 @@
+PROCESS SYNC
+
+#include<stdio.h>
+#include<unistd.h>
+#include<semaphore.h>
+#include<stdlib.h>
+#include<pthread.h>
+#include<string.h>
+#include<sys/types.h>
+#include<errno.h>
+
+sem_t mutex;
+//if more than one semaphore used then will continue to make sem_t variables
+int count 
+
+void handler(void *ptr)
+{
+int x = *((int*)ptr);
+//print statement
+sem_wait(&mutex);
+//some print statement
+//sem_post can be used
+//sleep condition can be used here 
+
+//print statements;
+count--;
+//print statements;
+sem_post(&mutex);
+pthread_exit(0);
+}
+
+int main()
+{
+int person[3]={1,2,3};
+pthread_t thread1,thread2,thread3;
+count = 3;
+sem_init(&mutex,0,1);
+//if more than 1 semaphore used then will continue to initialize
+
+pthread_create(&thread1,0,(void*)&handler,(void*)&person[0]);
+//continue the same for rest of the threads
+
+pthread_join(thread1,NULL);
+//continue for rest of the threads
+
+sem_destroy(&mutex);
+}

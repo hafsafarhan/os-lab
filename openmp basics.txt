@@ -1,0 +1,32 @@
+OPENMP TIME
+
+double t1,t2;
+t1 = omp_get_wtime();
+
+t2 = omp_get_wtime();
+
+printf("total running time : %g \n",t2-t1);
+
+
+OPENMP PRIVATE 
+
+#include<omp.h>
+#include<stdio.h>
+int main()
+{
+	int i;
+	const int n=100;
+int a = 50;
+int b = 0;
+
+#pragma omp parallel for private(a) private(b) private(i)
+for(i = 0 ;i<n;i++)
+{
+b = a+i;
+}
+printf("a=%d b=%d \n",a,b);
+}
+
+// how to run -> gcc -o file file.c -fopenmp
+// export OMP_NUM_THREAD = 4
+// ./file

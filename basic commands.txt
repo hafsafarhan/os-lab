@@ -1,0 +1,19 @@
+useradd -> creates new user command-> useradd abc
+addgroup -> adds group command -> addgroup abc
+adduser-> creates acc in a specific gorup adduser --ingroup sudo abc
+
+//displaying contents of file
+
+cat file1 (all content)
+
+head file1 (1st 10 lines)
+head -20 file1 (1st 20 lines)
+tail file1 (last 10 lines)
+tail -20 file1(last 20 lines)
+
+cp filea fileb (copies a file)
+cp -r dir1 dir2 ("" "" dire)
+rm file1 (removes file)
+mkdir -p dir/subdir/subsubdir
+
+chmod 
